@@ -29,6 +29,7 @@ export default function Home() {
       <QnA />
       <Numbers />
       <Footer />
+      <SpeedInsights />
     </>
   )
 }
