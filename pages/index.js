@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import SpeedInsights from "@vercel/speed-insights/next"
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Intro from '../components/Intro'
