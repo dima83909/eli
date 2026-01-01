@@ -24,14 +24,6 @@ export const metadata: Metadata = {
     description: "Eli web app",
     url: "/",
     siteName: "Eli",
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Eli",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -39,7 +31,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Eli",
     description: "Eli web app",
-    images: ["/og.png"],
   },
   alternates: {
     canonical: "/",
