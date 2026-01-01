@@ -1,0 +1,14 @@
+# Dependencies
+node_modules
+
+# Next.js outputs
+.next
+out
+build
+
+# Logs / coverage
+coverage
+*.log
+
+# Misc
+.DS_Store
