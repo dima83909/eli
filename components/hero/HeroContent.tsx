@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { scrollToSection } from '../useSmoothScroll';
 
 export default function HeroContent() {
   return (
@@ -30,11 +31,11 @@ export default function HeroContent() {
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
-            <button className="border border-white px-10 py-3 text-sm uppercase tracking-widest transition hover:bg-white hover:text-black">
+            <button onClick={() => scrollToSection("contact")} className="border border-white px-10 py-3 text-sm uppercase tracking-widest transition hover:bg-white hover:text-black">
               Почати тренування
             </button>
 
-            <button className="border border-transparent bg-white px-10 py-3 text-sm uppercase tracking-widest text-black transition hover:bg-white/80">
+            <button onClick={() => scrollToSection("contact")} className="border border-transparent bg-white px-10 py-3 text-sm uppercase tracking-widest text-black transition hover:bg-white/80">
               Записатись на консультацію
             </button>
           </div>
