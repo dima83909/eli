@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Social icons */}
           <div className="flex items-center gap-6">
             <a
-              href="https://instagram.com/USERNAME"
+              href="https://www.instagram.com/eli.danylenko"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -50,7 +50,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://tiktok.com/@USERNAME"
+              href="https://www.tiktok.com/@eli.danylenko"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
@@ -60,7 +60,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://t.me/USERNAME"
+              href="https://t.me/lisdanile"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"

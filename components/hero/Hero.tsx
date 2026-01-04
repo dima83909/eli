@@ -6,10 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="
-        relative w-full overflow-hidden
-        min-h-[100svh]
-      "
+      className="relative h-screen w-full overflow-hidden"
     >
       {/* VIDEO BACKGROUND */}
       <video
@@ -19,22 +16,16 @@ export default function Hero() {
         loop
         muted
         playsInline
-        preload="none"
-        poster="/images/hero-poster.jpg"
       />
 
       {/* OVERLAY */}
       <div className="absolute inset-0 bg-black/60" />
 
       {/* CONTENT */}
-      <div className="relative z-10 h-[100svh] pt-[env(safe-area-inset-top)]">
-        <HeroContent />
-      </div>
+      <HeroContent />
 
-      {/* SCROLL INDICATOR */}
-      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 pb-[env(safe-area-inset-bottom)]">
-        <ScrollIndicator />
-      </div>
+      {/* SCROLL */}
+      <ScrollIndicator />
     </section>
   );
 }
