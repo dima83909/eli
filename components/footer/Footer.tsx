@@ -35,9 +35,6 @@ export default function Footer() {
             <button onClick={() => scrollToSection("programs")} className="transition hover:text-white">
               Програми
             </button>
-            <button onClick={() => scrollToSection("contact")} className="transition hover:text-white">
-              Контакти
-            </button>
           </nav>
 
           {/* Social icons */}
