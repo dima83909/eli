@@ -11,7 +11,7 @@ export default function Hero() {
       {/* VIDEO BACKGROUND */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        src="/videos/fcb5f9dd3ad94a2e90c7b77dab58cc6d.mov"
+        src="/videos/hero-video.mov"
         autoPlay
         loop
         muted
