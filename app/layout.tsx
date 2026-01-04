@@ -1,43 +1,51 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: "Eli",
-    template: "%s | Eli",
+    default: "Personal Fitness Coach | Online & Offline Training",
+    template: "%s | Personal Fitness Coach",
   },
-  description: "Eli web app",
+  description:
+    "Personal fitness coaching for women. Online and offline training, sustainable results, confidence, and healthy habits.",
+  keywords: [
+    "personal trainer",
+    "online fitness coach",
+    "female fitness coach",
+    "personal training",
+    "online coaching",
+  ],
+  authors: [{ name: "Personal Fitness Coach" }],
+  creator: "Personal Fitness Coach",
+  metadataBase: new URL("https://eli-danylenko.vercel.app"),
+
   openGraph: {
-    title: "Eli",
-    description: "Eli web app",
-    url: "/",
-    siteName: "Eli",
+    title: "Personal Fitness Coach",
+    description:
+      "Online & offline personal fitness coaching focused on strength, confidence, and sustainable results.",
+    url: "https://eli-danylenko.vercel.app",
+    siteName: "Personal Fitness Coach",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Personal Fitness Coach",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Eli",
-    description: "Eli web app",
+    title: "Personal Fitness Coach",
+    description:
+      "Online & offline coaching for women. Sustainable fitness results.",
+    images: ["/og-image.jpg"],
   },
-  alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/",
-    },
-  },
+
   robots: {
     index: true,
     follow: true,
@@ -46,12 +54,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
