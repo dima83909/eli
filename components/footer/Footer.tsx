@@ -2,6 +2,7 @@
 "use client";
 
 import { scrollToSection } from "@/components/useSmoothScroll";
+import { FaInstagram, FaTelegramPlane, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -25,42 +26,50 @@ export default function Footer() {
             aria-label="Footer navigation"
             className="flex flex-wrap justify-center gap-8 text-sm uppercase tracking-widest text-white/70"
           >
-            <button
-              onClick={() => scrollToSection("hero")}
-              className="transition hover:text-white"
-            >
+            <button onClick={() => scrollToSection("hero")} className="transition hover:text-white">
               Головна
             </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="transition hover:text-white"
-            >
+            <button onClick={() => scrollToSection("about")} className="transition hover:text-white">
               Про мене
             </button>
-            <button
-              onClick={() => scrollToSection("programs")}
-              className="transition hover:text-white"
-            >
+            <button onClick={() => scrollToSection("programs")} className="transition hover:text-white">
               Програми
             </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="transition hover:text-white"
-            >
+            <button onClick={() => scrollToSection("contact")} className="transition hover:text-white">
               Контакти
             </button>
           </nav>
 
-          {/* Instagram CTA */}
-          <div>
+          {/* Social icons */}
+          <div className="flex items-center gap-6">
             <a
               href="https://instagram.com/USERNAME"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram профіль тренера"
-              className="border border-white px-6 py-3 text-sm uppercase tracking-widest transition hover:bg-white hover:text-black"
+              aria-label="Instagram"
+              className="text-white/60 transition hover:text-white"
             >
-              Написати в Instagram
+              <FaInstagram size={20} />
+            </a>
+
+            <a
+              href="https://tiktok.com/@USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="text-white/60 transition hover:text-white"
+            >
+              <FaTiktok size={20} />
+            </a>
+
+            <a
+              href="https://t.me/USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+              className="text-white/60 transition hover:text-white"
+            >
+              <FaTelegramPlane size={20} />
             </a>
           </div>
         </div>

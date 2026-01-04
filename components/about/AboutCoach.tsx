@@ -19,7 +19,7 @@ export default function AboutCoach() {
           className="relative h-[520px] w-full"
         >
           <Image
-            src="/images/about-coach.jpg"
+            src="/images/IMG_82AE7B2DBE7E-1.jpeg"
             alt="Personal fitness coach portrait"
             fill
             className="object-cover"
