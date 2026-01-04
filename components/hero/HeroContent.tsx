@@ -14,7 +14,7 @@ export default function HeroContent() {
           className="max-w-2xl text-white"
         >
           <span className="mb-4 block text-sm uppercase tracking-widest text-white/70">
-            Online & Offline Coaching
+            Онлайн та офлайн тренування
           </span>
 
           <h1 className="hero-title mb-6 leading-tight">
@@ -24,18 +24,18 @@ export default function HeroContent() {
           </h1>
 
           <p className="mb-10 text-base leading-relaxed text-white/80 sm:text-lg">
-            Personalized training programs and nutrition guidance designed
-            to help you get stronger, leaner, and more confident — both
-            physically and mentally.
+            Персональний фітнес коучинг для жінок, який допомагає досягти
+            стійких результатів, підвищити впевненість у собі та сформувати
+            здорові звички — без крайнощів та виснажливих дієт.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <button className="border border-white px-10 py-3 text-sm uppercase tracking-widest transition hover:bg-white hover:text-black">
-              Start training
+              Почати тренування
             </button>
 
             <button className="border border-transparent bg-white px-10 py-3 text-sm uppercase tracking-widest text-black transition hover:bg-white/80">
-              Free consultation
+              Записатись на консультацію
             </button>
           </div>
         </motion.div>
