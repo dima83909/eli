@@ -1,7 +1,7 @@
-// components/testimonials/Testimonials.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
 import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
@@ -57,10 +57,47 @@ const testimonials = [
   },
 ];
 
-// подвоюємо для безшовного loop
+// дубль для безшовного loop
 const loopedTestimonials = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
+  const controls = useAnimation();
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!trackRef.current) return;
+
+    const track = trackRef.current;
+    const width = track.scrollWidth / 2;
+
+    let cancelled = false;
+
+    const animate = async () => {
+      if (cancelled) return;
+
+      await controls.start({
+        x: -width,
+        transition: {
+          duration: width / 40, // швидкість руху
+          ease: "linear",
+        },
+      });
+
+      if (cancelled) return;
+
+      // миттєвий reset без анімації
+      controls.set({ x: 0 });
+
+      animate();
+    };
+
+    animate();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [controls]);
+
   return (
     <section
       id="testimonials"
@@ -75,19 +112,17 @@ export default function Testimonials() {
         </h2>
       </div>
 
-      {/* Horizontal strip */}
-      <div className="relative">
+      <div className="relative px-6 md:px-12 overflow-hidden">
         <motion.div
-          className="flex gap-8"
-          animate={{ x: ["10%", "-50%"] }}
-          transition={{
-            duration: 20,
-            ease: "linear",
-            repeat: Infinity,
-          }}
+          ref={trackRef}
+          className="flex gap-8 will-change-transform"
+          animate={controls}
         >
           {loopedTestimonials.map((item, index) => (
-            <div key={index} className="min-w-[300px] min-h-[200px]">
+            <div
+              key={`${item.name}-${index}`}
+              className="min-w-[300px]"
+            >
               <TestimonialCard
                 name={item.name}
                 result={item.result}
@@ -98,8 +133,8 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-neutral-100 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-neutral-100 to-transparent" />
       </div>
     </section>
   );
