@@ -5,6 +5,7 @@ import Programs from '@/components/programs/Programs';
 import Contact from '@/components/contact/Contact';
 import Footer from '@/components/footer/Footer';
 import type { Metadata } from "next";
+import FAQ from '@/components/faq/FAQ';
 
 export const metadata: Metadata = {
   title: "Online & Offline Personal Coaching",
@@ -19,6 +20,7 @@ export default function Home() {
       <AboutCoach />
       <Testimonials />
       <Programs />
+      <FAQ />
       <Contact />
       <Footer />
     </>
