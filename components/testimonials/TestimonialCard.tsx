@@ -7,7 +7,7 @@ type Props = {
 
 export default function TestimonialCard({ name, result, text }: Props) {
   return (
-    <div className="h-full bg-white p-8 shadow-sm flex flex-col">
+    <div className="h-full min-w-[300px] bg-white p-8 shadow-sm flex flex-col">
       {/* Text */}
       <p className="mb-6 flex-1 text-gray-600 leading-relaxed">
         “{text}”

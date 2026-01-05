@@ -79,9 +79,9 @@ export default function Testimonials() {
       <div className="relative">
         <motion.div
           className="flex gap-8"
-          animate={{ x: ["15%", "-50%"] }}
+          animate={{ x: ["10%", "-50%"] }}
           transition={{
-            duration: 20, // дуже повільно = premium
+            duration: 20,
             ease: "linear",
             repeat: Infinity,
           }}
