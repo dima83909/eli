@@ -1,17 +1,8 @@
 // components/about/AboutCoachContent.tsx
-"use client";
-
-import { motion } from "framer-motion";
-import { scrollToSection } from "@/components/useSmoothScroll";
 
 export default function AboutCoachContent() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-    >
+    <div>
       {/* Eyebrow */}
       <span className="mb-4 block text-sm uppercase tracking-widest text-gray-500">
         Про мене
@@ -47,12 +38,12 @@ export default function AboutCoachContent() {
       </ul>
 
       {/* CTA */}
-      <button
-        onClick={() => scrollToSection("contact")}
-        className="border border-black px-8 py-3 text-sm uppercase tracking-widest transition hover:bg-black hover:text-white"
+      <a
+        href="#contact"
+        className="inline-block border border-black px-8 py-3 text-sm uppercase tracking-widest transition hover:bg-black hover:text-white"
       >
         Почати співпрацю
-      </button>
-    </motion.div>
+      </a>
+    </div>
   );
 }

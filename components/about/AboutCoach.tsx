@@ -1,8 +1,5 @@
 // components/about/AboutCoach.tsx
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import AboutCoachContent from "./AboutCoachContent";
 
 export default function AboutCoach() {
@@ -11,30 +8,20 @@ export default function AboutCoach() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-20 px-6 md:grid-cols-2">
         
         {/* Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative h-[520px] w-full"
-        >
+        <div className="reveal relative h-[520px] w-full">
           <Image
             src="/images/IMG_82AE7B2DBE7E-1.jpeg"
             alt="Personal fitness coach portrait"
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
-        </motion.div>
+        </div>
 
         {/* Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-        >
+        <div className="reveal delay-150">
           <AboutCoachContent />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

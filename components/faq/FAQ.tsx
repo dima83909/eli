@@ -1,7 +1,4 @@
 // components/faq/FAQ.tsx
-"use client";
-
-import { motion } from "framer-motion";
 import FAQItem from "./FAQItem";
 
 const faqs = [
@@ -36,17 +33,11 @@ export default function FAQ() {
   return (
     <section id="faq" className="bg-neutral-100 py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
-        >
+        <div className="reveal mb-14 text-center">
           <span className="block text-sm uppercase tracking-widest text-gray-500">
             Питання та відповіді
           </span>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((item, index) => (

@@ -1,8 +1,4 @@
 // components/hero/HeroContent.tsx
-"use client";
-
-import { motion } from "framer-motion";
-import { scrollToSection } from "../useSmoothScroll";
 
 export default function HeroContent() {
   return (
@@ -14,12 +10,7 @@ export default function HeroContent() {
       "
     >
       <div className="mx-auto w-full max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl text-white"
-        >
+        <div className="reveal max-w-2xl text-white">
           {/* Eyebrow */}
           <span className="mb-5 block text-sm uppercase tracking-widest text-white/70">
             Онлайн та офлайн тренування
@@ -49,8 +40,8 @@ export default function HeroContent() {
           {/* CTAs */}
           <div className="flex flex-col gap-4 sm:flex-row">
             {/* Primary CTA */}
-            <button
-              onClick={() => scrollToSection("contact")}
+            <a
+              href="#contact"
               className="
                 border border-white bg-white
                 px-10 py-4
@@ -59,11 +50,11 @@ export default function HeroContent() {
               "
             >
               Записатись на консультацію
-            </button>
+            </a>
 
             {/* Secondary CTA */}
-            <button
-              onClick={() => scrollToSection("about")}
+            <a
+              href="#about"
               className="
                 border border-white/50
                 px-10 py-4
@@ -72,9 +63,9 @@ export default function HeroContent() {
               "
             >
               Про мене
-            </button>
+            </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,3 @@
-"use client";
-
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
 import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
@@ -61,43 +57,6 @@ const testimonials = [
 const loopedTestimonials = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
-  const controls = useAnimation();
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!trackRef.current) return;
-
-    const track = trackRef.current;
-    const width = track.scrollWidth / 2;
-
-    let cancelled = false;
-
-    const animate = async () => {
-      if (cancelled) return;
-
-      await controls.start({
-        x: -width,
-        transition: {
-          duration: width / 40, // швидкість руху
-          ease: "linear",
-        },
-      });
-
-      if (cancelled) return;
-
-      // миттєвий reset без анімації
-      controls.set({ x: 0 });
-
-      animate();
-    };
-
-    animate();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [controls]);
-
   return (
     <section
       id="testimonials"
@@ -113,15 +72,12 @@ export default function Testimonials() {
       </div>
 
       <div className="relative px-6 md:px-12 overflow-hidden">
-        <motion.div
-          ref={trackRef}
-          className="flex gap-8 will-change-transform"
-          animate={controls}
-        >
+        <div className="testimonials-track flex gap-8 will-change-transform">
           {loopedTestimonials.map((item, index) => (
             <div
               key={`${item.name}-${index}`}
               className="min-w-[300px]"
+              data-duplicate={index >= testimonials.length ? "true" : "false"}
             >
               <TestimonialCard
                 name={item.name}
@@ -130,7 +86,7 @@ export default function Testimonials() {
               />
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-neutral-100 to-transparent" />

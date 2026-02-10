@@ -1,18 +1,10 @@
 // components/contact/Contact.tsx
-"use client";
-
-import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
     <section id="contact" className="bg-black py-28 text-white">
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
+        <div className="reveal">
           <span className="mb-4 block text-sm uppercase tracking-widest text-white/60">
             Контакти
           </span>
@@ -36,7 +28,7 @@ export default function Contact() {
           >
             Написати в Instagram
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

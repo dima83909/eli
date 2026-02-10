@@ -14,3 +14,90 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes testimonials-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: reveal-in 700ms ease-out forwards;
+}
+
+.reveal.delay-150 {
+  animation-delay: 150ms;
+}
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonials-track {
+  width: max-content;
+  animation: testimonials-marquee 55s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-track {
+    animation: none;
+    transform: none;
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  .testimonials-track [data-duplicate="true"] {
+    display: none;
+  }
+}
+
+.faq-item {
+  overflow: hidden;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-panel {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 250ms ease, opacity 200ms ease;
+}
+
+.faq-item[open] .faq-panel {
+  max-height: 160px;
+  opacity: 1;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-icon {
+  transition: transform 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .faq-panel {
+    transition: none;
+  }
+
+  .faq-icon {
+    transition: none;
+  }
+}

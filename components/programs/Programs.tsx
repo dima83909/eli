@@ -1,7 +1,4 @@
 // components/programs/Programs.tsx
-"use client";
-
-import { motion } from "framer-motion";
 import ProgramCard from "./ProgramCard";
 
 export default function Programs() {
@@ -10,20 +7,14 @@ export default function Programs() {
       <div className="mx-auto max-w-7xl px-6">
         
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
+        <div className="reveal mb-16 text-center">
           <span className="mb-4 block text-sm uppercase tracking-widest text-gray-400">
             Програми
           </span>
           <h2 className="text-3xl font-light text-gray-900 sm:text-4xl">
             Формат тренувань під ваші цілі
           </h2>
-        </motion.div>
+        </div>
 
         {/* Cards */}
         <div className="grid gap-10 md:grid-cols-3">
