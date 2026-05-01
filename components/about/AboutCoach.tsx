@@ -15,7 +15,7 @@ export default function AboutCoach() {
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-14 px-5 sm:px-8 md:grid-cols-[0.92fr_1.08fr] lg:gap-20 lg:px-12">
         <FadeIn className="relative -ml-5 h-[68vh] min-h-[480px] w-[calc(100%+2.5rem)] sm:-ml-8 sm:w-[calc(100%+4rem)] md:-ml-12 md:h-[760px] md:min-h-0 md:w-[calc(100%+3rem)]">
           <Image
-            src="/images/IMG_82AE7B2DBE7E-1.jpeg"
+            src="/images/IMG_0059.jpg"
             alt="Personal fitness coach portrait"
             fill
             sizes="(min-width: 768px) 48vw, 100vw"
