@@ -19,14 +19,7 @@ export default function AboutCoach() {
             alt="Personal fitness coach portrait"
             fill
             sizes="(min-width: 768px) 48vw, 100vw"
-            className="object-cover object-[50%_12%] md:hidden"
-          />
-          <Image
-            src="/images/IMG_0059.jpg"
-            alt="Personal fitness coach portrait"
-            fill
-            sizes="(min-width: 768px) 48vw, 100vw"
-            className="object-cover object-[50%_12%] hidden md:block"
+            className="object-cover object-[50%_12%]"
           />
           <div className="absolute bottom-0 right-0 bg-[#F5B8CC] px-5 py-4 font-serif text-4xl font-black italic text-white sm:px-8 sm:text-6xl">
             100+
