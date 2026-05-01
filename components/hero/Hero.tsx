@@ -21,7 +21,7 @@ export default function Hero() {
             playsInline
           />
           <Image
-            src="/images/IMG_82AE7B2DBE7E-1.jpeg"
+            src="/images/IMG_0059.jpg"
             alt="Personal fitness coach portrait"
             fill
             priority
