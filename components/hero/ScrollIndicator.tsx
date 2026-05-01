@@ -1,12 +1,9 @@
-// components/hero/ScrollIndicator.tsx
 export default function ScrollIndicator() {
   return (
-    <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-      <div className="flex flex-col items-center text-white/70">
-        <span className="mb-2 text-xs uppercase tracking-widest">
-          Scroll
-        </span>
-        <div className="h-10 w-px bg-white/50 animate-pulse" />
+    <div className="absolute bottom-7 left-1/2 z-20 hidden -translate-x-1/2 lg:block">
+      <div className="flex flex-col items-center text-[#fdffff]/70">
+        <span className="mb-3 text-[10px] font-black uppercase tracking-[0.28em]">Скрол</span>
+        <div className="h-12 w-px origin-top animate-pulse bg-[#ffdcf7]" />
       </div>
     </div>
   );

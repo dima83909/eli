@@ -1,72 +1,51 @@
-// components/hero/HeroContent.tsx
+"use client";
+
+import { motion } from "framer-motion";
 
 export default function HeroContent() {
   return (
-    <div
-      className="
-        relative z-10 flex h-full items-center
-        px-6
-        pt-[env(safe-area-inset-top)]
-      "
+    <motion.div
+      className="relative z-10 flex items-center px-5 pb-24 pt-14 sm:px-8 lg:min-h-screen lg:px-12 lg:pb-20"
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="mx-auto w-full max-w-6xl">
-        <div className="reveal max-w-2xl text-white">
-          {/* Eyebrow */}
-          <span className="mb-5 block text-sm uppercase tracking-widest text-white/70">
-            Онлайн та офлайн тренування
-          </span>
+      <div className="max-w-2xl">
+        <span className="mb-6 block text-xs font-black uppercase tracking-[0.22em] text-[#fdffff]/70">
+          Онлайн та офлайн тренування
+        </span>
 
-          {/* H1 — єдиний на сторінці */}
-          <h1
-            className="
-              hero-title mb-6 font-serif font-light leading-tight
-              text-3xl
-              sm:text-4xl
-              md:text-5xl
-            "
+        <h1 className="mb-7 font-serif text-[clamp(3.4rem,12vw,8.6rem)] font-black uppercase leading-[0.78] tracking-normal">
+          Твоє
+          <br />
+          <span className="text-[#fdffff]">ті</span>
+          <span className="italic text-[#ffdcf7]">ло</span>
+          <br />
+          <span className="text-[0.56em] italic normal-case text-[#ffdcf7]">твоя сила.</span>
+        </h1>
+
+        <p className="mb-10 max-w-xl text-base leading-relaxed text-[#fdffff]/82 sm:text-lg">
+          Персональний фітнес-коучинг для жінок, який допомагає досягти стійких результатів,
+          підвищити впевненість у собі та сформувати здорові звички — без крайнощів і виснажливих
+          дієт.
+        </p>
+
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full bg-[#ffdcf7] px-9 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#fdffff] hover:text-[#071441]"
           >
-            Transform your body.
-            <br />
-            Build confidence.
-          </h1>
+            Записатись на консультацію
+          </a>
 
-          {/* Description */}
-          <p className="mb-12 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
-            Персональний фітнес-коучинг для жінок, який допомагає
-            досягти стійких результатів, підвищити впевненість у собі
-            та сформувати здорові звички — без крайнощів і виснажливих дієт.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col gap-4 sm:flex-row">
-            {/* Primary CTA */}
-            <a
-              href="#contact"
-              className="
-                border border-white bg-white
-                px-10 py-4
-                text-sm uppercase tracking-widest text-black
-                transition hover:bg-white/90
-              "
-            >
-              Записатись на консультацію
-            </a>
-
-            {/* Secondary CTA */}
-            <a
-              href="#about"
-              className="
-                border border-white/50
-                px-10 py-4
-                text-sm uppercase tracking-widest text-white
-                transition hover:border-white hover:bg-white hover:text-black
-              "
-            >
-              Про мене
-            </a>
-          </div>
+          <a
+            href="#about"
+            className="inline-flex items-center justify-center rounded-full border border-[#fdffff]/40 px-9 py-4 text-sm font-black uppercase tracking-[0.1em] text-[#fdffff] transition hover:border-[#fdffff] hover:bg-[#fdffff] hover:text-[#071441]"
+          >
+            Про мене
+          </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

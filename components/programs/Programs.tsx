@@ -1,24 +1,31 @@
-// components/programs/Programs.tsx
+import FadeIn from "@/components/motion/FadeIn";
 import ProgramCard from "./ProgramCard";
 
 export default function Programs() {
   return (
-    <section id="programs" className="bg-white py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        
-        {/* Header */}
-        <div className="reveal mb-16 text-center">
-          <span className="mb-4 block text-sm uppercase tracking-widest text-gray-400">
+    <section
+      id="programs"
+      className="relative overflow-hidden bg-[#071441] py-24 text-white md:py-32"
+    >
+      <span className="pointer-events-none absolute -left-10 top-8 font-serif text-[30vw] font-black leading-none text-white/[0.04]">
+        P
+      </span>
+
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <FadeIn className="mb-14 max-w-5xl">
+          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
             Програми
           </span>
-          <h2 className="text-3xl font-light text-gray-900 sm:text-4xl">
-            Формат тренувань під ваші цілі
+          <h2 className="font-serif text-[clamp(3rem,8vw,7.4rem)] font-black uppercase leading-[0.86] tracking-normal">
+            Формат тренувань
+            <br />
+            <span className="italic text-[#ffdcf7]">під ваші цілі</span>
           </h2>
-        </div>
+        </FadeIn>
 
-        {/* Cards */}
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3">
           <ProgramCard
+            index="01"
             title="Онлайн супровід"
             subtitle="Зручний формат"
             description="Індивідуальна програма тренувань та рекомендації з харчування з постійним зворотним звʼязком."
@@ -32,6 +39,7 @@ export default function Programs() {
           />
 
           <ProgramCard
+            index="02"
             title="Офлайн тренування"
             subtitle="Індивідуально"
             description="Персональні заняття у залі з фокусом на техніку, силу та безпечне навантаження."
@@ -46,6 +54,7 @@ export default function Programs() {
           />
 
           <ProgramCard
+            index="03"
             title="Комплексна трансформація"
             subtitle="8–12 тижнів"
             description="Поступова робота з тілом та звичками для стабільного та довготривалого результату."

@@ -1,25 +1,35 @@
-// components/testimonials/TestimonialCard.tsx
 type Props = {
   name: string;
   result: string;
   text: string;
+  active?: boolean;
 };
 
-export default function TestimonialCard({ name, result, text }: Props) {
+export default function TestimonialCard({ name, result, text, active }: Props) {
   return (
-    <div className="h-full min-w-[300px] bg-white p-8 shadow-sm flex flex-col">
-      {/* Text */}
-      <p className="mb-6 flex-1 text-gray-600 leading-relaxed">
+    <article
+      className={`flex min-h-[340px] flex-col justify-between border border-[#071441]/18 p-7 transition duration-300 sm:p-9 ${
+        active ? "bg-[#071441] text-white" : "bg-transparent text-[#071441]"
+      }`}
+    >
+      <p
+        className={`font-serif text-3xl font-black leading-[1.05] sm:text-4xl ${
+          active ? "text-white" : "text-[#071441]"
+        }`}
+      >
         “{text}”
       </p>
 
-      {/* Footer */}
-      <div className="border-t pt-4">
-        <p className="text-sm font-medium text-gray-900">{name}</p>
-        <p className="text-xs uppercase tracking-widest text-gray-500">
+      <div className={`mt-10 border-t pt-5 ${active ? "border-white/22" : "border-[#071441]/20"}`}>
+        <p className="text-sm font-black uppercase tracking-[0.14em]">{name}</p>
+        <p
+          className={`mt-2 text-xs uppercase tracking-[0.16em] ${
+            active ? "text-white/62" : "text-[#071441]/55"
+          }`}
+        >
           {result}
         </p>
       </div>
-    </div>
+    </article>
   );
 }

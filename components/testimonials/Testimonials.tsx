@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
@@ -53,44 +57,87 @@ const testimonials = [
   },
 ];
 
-// дубль для безшовного loop
-const loopedTestimonials = [...testimonials, ...testimonials];
-
 export default function Testimonials() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = window.setInterval(() => {
+      setActive((current) => (current + 1) % testimonials.length);
+    }, 4200);
+    return () => window.clearInterval(timer);
+  }, [paused]);
+
+  const visible = [
+    testimonials[active],
+    testimonials[(active + 1) % testimonials.length],
+    testimonials[(active + 2) % testimonials.length],
+  ];
+
   return (
     <section
       id="testimonials"
-      className="bg-neutral-100 py-20 md:py-28 overflow-hidden"
+      className="relative overflow-hidden bg-[#fdffff] py-24 text-[#071441] md:py-32"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
     >
-      <div className="mx-auto max-w-7xl px-6 mb-16">
-        <span className="mb-4 block text-sm uppercase tracking-widest text-gray-400">
-          Відгуки
-        </span>
-        <h2 className="text-3xl font-light text-gray-900 sm:text-4xl">
-          Досвід жінок, які тренуються зі мною
-        </h2>
-      </div>
+      <span className="pointer-events-none absolute left-4 top-4 font-serif text-[28vw] font-black leading-none text-[#ffdcf7]/12 md:left-10 md:text-[18vw]">
+        “
+      </span>
 
-      <div className="relative px-6 md:px-12 overflow-hidden">
-        <div className="testimonials-track flex gap-8 will-change-transform">
-          {loopedTestimonials.map((item, index) => (
-            <div
-              key={`${item.name}-${index}`}
-              className="min-w-[300px]"
-              data-duplicate={index >= testimonials.length ? "true" : "false"}
-            >
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        <motion.div
+          className="relative z-10 mb-12 max-w-5xl"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
+            Відгуки
+          </span>
+          <h2 className="font-serif text-[clamp(3rem,8vw,7rem)] font-black uppercase leading-[0.86] tracking-normal">
+            Досвід жінок,
+            <br />
+            <span className="italic text-[#ffdcf7]">які тренуються зі мною</span>
+          </h2>
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            className="grid gap-5 md:grid-cols-3"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+          >
+            {visible.map((item, index) => (
               <TestimonialCard
-                name={item.name}
-                result={item.result}
-                text={item.text}
+                key={`${item?.name}-${active}-${index}`}
+                name={item?.name ?? ""}
+                result={item?.result ?? ""}
+                text={item?.text ?? ""}
+                active={index === 0}
               />
-            </div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="mt-10 flex justify-center gap-3">
+          {testimonials.map((item, index) => (
+            <button
+              key={item.name}
+              type="button"
+              aria-label={`Показати відгук ${index + 1}`}
+              onClick={() => setActive(index)}
+              className={`h-3 rounded-full transition ${
+                active === index ? "w-10 bg-[#ffdcf7]" : "w-3 bg-[#071441]/22 hover:bg-[#071441]/45"
+              }`}
+            />
           ))}
         </div>
-
-        {/* Fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-neutral-100 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-neutral-100 to-transparent" />
       </div>
     </section>
   );

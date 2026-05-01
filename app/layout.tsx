@@ -1,48 +1,52 @@
-// app/layout.tsx
 import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "Personal Fitness Coach | Online & Offline Training",
-    template: "%s | Personal Fitness Coach",
+    default: "Персональні тренування | Онлайн та офлайн",
+    template: "%s | Персональні тренування",
   },
-  description:
-    "Personal fitness coaching for women. Online and offline training, sustainable results, confidence, and healthy habits.",
-  keywords: [
-    "personal trainer",
-    "online fitness coach",
-    "female fitness coach",
-    "personal training",
-    "online coaching",
-  ],
-  authors: [{ name: "Personal Fitness Coach" }],
-  creator: "Personal Fitness Coach",
+  description: "Персональний фітнес-коучинг для жінок онлайн та офлайн у Камʼянці-Подільському.",
+  keywords: ["персональний тренер", "онлайн тренування", "фітнес тренер", "Камʼянець-Подільський"],
+  authors: [{ name: "Персональний тренер" }],
+  creator: "Персональний тренер",
   metadataBase: new URL("https://eli-danylenko.vercel.app"),
 
   openGraph: {
-    title: "Personal Fitness Coach",
+    title: "Персональні тренування",
     description:
-      "Online & offline personal fitness coaching focused on strength, confidence, and sustainable results.",
+      "Онлайн та офлайн тренування з фокусом на силу, впевненість і стабільний результат.",
     url: "https://eli-danylenko.vercel.app",
-    siteName: "Personal Fitness Coach",
+    siteName: "Персональні тренування",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Personal Fitness Coach",
+        alt: "Персональний тренер",
       },
     ],
-    locale: "en_US",
+    locale: "uk_UA",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Personal Fitness Coach",
-    description:
-      "Online & offline coaching for women. Sustainable fitness results.",
+    title: "Персональні тренування",
+    description: "Онлайн та офлайн тренування для жінок. Стабільний фітнес-результат.",
     images: ["/og-image.jpg"],
   },
 
@@ -52,13 +56,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uk">
+    <html lang="uk" className={`${inter.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   );

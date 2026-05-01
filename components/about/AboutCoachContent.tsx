@@ -1,46 +1,70 @@
-// components/about/AboutCoachContent.tsx
-
 export default function AboutCoachContent() {
+  const stats = [
+    { value: "100+", label: "клієнток" },
+    { value: "3+", label: "роки досвіду" },
+    { value: "Онлайн", label: "та офлайн" },
+  ];
+
   return (
-    <div>
-      {/* Eyebrow */}
-      <span className="mb-4 block text-sm uppercase tracking-widest text-gray-500">
+    <div className="relative">
+      <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
         Про мене
       </span>
 
-      {/* Heading */}
-      <h2 className="mb-6 text-3xl font-light text-gray-900 sm:text-4xl">
-        Тренування, які підлаштовуються під ваше життя
+      <h2 className="mb-8 max-w-3xl font-serif text-[clamp(3rem,7vw,6.8rem)] font-black uppercase leading-[0.86] tracking-normal">
+        Тренування,
+        <br />
+        які підлашто
+        <span className="italic text-[#ffdcf7]">вуються</span>
+        <br />
+        під ваше життя
       </h2>
 
-      {/* Text */}
-      <p className="mb-6 leading-relaxed text-gray-600">
-        Я — персональний тренер і працюю з жінками різного рівня підготовки:
-        від початківців до тих, хто вже має досвід у тренуваннях.
-      </p>
+      <div className="max-w-2xl space-y-5 text-base leading-relaxed text-[#071441]/78 sm:text-lg">
+        <p>
+          Я — персональний тренер і працюю з жінками різного рівня підготовки: від початківців до
+          тих, хто вже має досвід у тренуваннях.
+        </p>
 
-      <p className="mb-6 leading-relaxed text-gray-600">
-        Проводжу <strong>офлайн тренування у Камʼянці-Подільському</strong>,
-        а також працюю <strong>онлайн по всій Україні</strong>, підбираючи
-        програму з урахуванням вашого ритму життя, цілей та самопочуття.
-      </p>
+        <p>
+          Проводжу <strong>офлайн тренування у Камʼянці-Подільському</strong>, а також працюю{" "}
+          <strong>онлайн по всій Україні</strong>, підбираючи програму з урахуванням вашого ритму
+          життя, цілей та самопочуття.
+        </p>
 
-      <p className="mb-10 leading-relaxed text-gray-600">
-        Мій підхід — це регулярність, безпека та довгостроковий результат.
-        Без жорстких дієт, заборон і постійного тиску на себе.
-      </p>
+        <p>
+          Мій підхід — це регулярність, безпека та довгостроковий результат. Без жорстких дієт,
+          заборон і постійного тиску на себе.
+        </p>
+      </div>
 
-      {/* List */}
-      <ul className="mb-10 space-y-3 text-sm text-gray-700">
-        <li>• Індивідуальний підхід до кожної клієнтки</li>
-        <li>• Онлайн та офлайн формат тренувань</li>
-        <li>• Фокус на здоровʼя, силу та впевненість</li>
+      <ul className="mt-8 grid gap-3 text-sm font-bold uppercase tracking-[0.08em] text-[#071441] sm:grid-cols-3">
+        <li className="border-t border-[#071441]/25 pt-4">
+          Індивідуальний підхід до кожної клієнтки
+        </li>
+        <li className="border-t border-[#071441]/25 pt-4">Онлайн та офлайн формат тренувань</li>
+        <li className="border-t border-[#071441]/25 pt-4">
+          Фокус на здоровʼя, силу та впевненість
+        </li>
       </ul>
 
-      {/* CTA */}
+      <div className="mt-10 grid border-y border-[#071441] sm:grid-cols-3">
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className="border-[#071441]/30 py-6 sm:border-r sm:px-6 last:sm:border-r-0"
+          >
+            <div className="font-serif text-5xl font-black italic leading-none text-[#ffdcf7]">
+              {stat.value}
+            </div>
+            <div className="mt-2 text-xs font-black uppercase tracking-[0.18em]">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
       <a
         href="#contact"
-        className="inline-block border border-black px-8 py-3 text-sm uppercase tracking-widest transition hover:bg-black hover:text-white"
+        className="mt-10 inline-flex rounded-full bg-[#071441] px-8 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#ffdcf7]"
       >
         Почати співпрацю
       </a>

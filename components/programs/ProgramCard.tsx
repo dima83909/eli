@@ -1,5 +1,5 @@
-// components/programs/ProgramCard.tsx
 type Props = {
+  index: string;
   title: string;
   subtitle: string;
   description: string;
@@ -9,6 +9,7 @@ type Props = {
 };
 
 export default function ProgramCard({
+  index,
   title,
   subtitle,
   description,
@@ -17,40 +18,42 @@ export default function ProgramCard({
   highlighted,
 }: Props) {
   return (
-    <div
-      className={`flex h-full flex-col border p-10 transition
-        ${highlighted ? "border-black" : "border-gray-200"}
-      `}
+    <article
+      className={`group relative flex min-h-[520px] flex-col overflow-hidden border border-white/18 p-7 transition duration-300 hover:border-[#ffdcf7] hover:bg-[#ffdcf7] sm:p-9 ${
+        highlighted ? "bg-white/[0.06]" : "bg-transparent"
+      }`}
     >
-      <span className="mb-2 text-xs uppercase tracking-widest text-gray-500">
+      <span className="pointer-events-none absolute -right-3 top-1 font-serif text-[11rem] font-black leading-none text-white/[0.055] transition group-hover:text-white/12">
+        {index}
+      </span>
+
+      <span className="relative z-10 mb-6 text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7] transition group-hover:text-white/70">
         {subtitle}
       </span>
 
-      <h3 className="mb-4 text-xl font-light text-gray-900">
+      <h3 className="relative z-10 mb-6 font-serif text-4xl font-black leading-[0.95] text-white sm:text-5xl">
         {title}
       </h3>
 
-      <p className="mb-6 text-gray-600 leading-relaxed">
+      <p className="relative z-10 mb-8 leading-relaxed text-white/72 transition group-hover:text-white">
         {description}
       </p>
 
-      <ul className="mb-10 space-y-2 text-sm text-gray-700">
+      <ul className="relative z-10 mb-10 space-y-3 text-sm text-white/68 transition group-hover:text-white/86">
         {features.map((feature, index) => (
-          <li key={index}>• {feature}</li>
+          <li key={index} className="border-t border-white/14 pt-3">
+            {feature}
+          </li>
         ))}
       </ul>
 
-      <button
-        className={`mt-auto border px-6 py-3 text-sm uppercase tracking-widest transition
-          ${
-            highlighted
-              ? "border-black bg-black text-white hover:bg-black/90"
-              : "border-black hover:bg-black hover:text-white"
-          }
-        `}
+      <a
+        href="#contact"
+        className="relative z-10 mt-auto inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.1em] text-[#ffdcf7] transition group-hover:text-white"
       >
         {cta}
-      </button>
-    </div>
+        <span aria-hidden="true">→</span>
+      </a>
+    </article>
   );
 }

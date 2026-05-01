@@ -3,101 +3,67 @@
 :root {
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
+  --background: #fdffff;
+  --foreground: #071441;
 }
 
-.hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 400;
+* {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
-@keyframes testimonials-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: reveal-in 700ms ease-out forwards;
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
-.reveal.delay-150 {
-  animation-delay: 150ms;
+a {
+  text-decoration: none;
 }
 
-@keyframes reveal-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+::selection {
+  background: #ffdcf7;
+  color: #ffffff;
 }
 
-.testimonials-track {
-  width: max-content;
-  animation: testimonials-marquee 55s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .testimonials-track {
-    animation: none;
-    transform: none;
-    width: auto;
-    flex-wrap: wrap;
-  }
-
-  .testimonials-track [data-duplicate="true"] {
-    display: none;
-  }
-}
-
-.faq-item {
-  overflow: hidden;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-panel {
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 250ms ease, opacity 200ms ease;
-}
-
-.faq-item[open] .faq-panel {
-  max-height: 160px;
-  opacity: 1;
-}
-
-.faq-item[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-icon {
-  transition: transform 200ms ease;
+.grain-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+  background-image:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 30% 20%, rgba(232, 96, 58, 0.28), transparent 28%);
+  background-size:
+    3px 3px,
+    3px 3px,
+    100% 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-
-  .faq-panel {
-    transition: none;
-  }
-
-  .faq-icon {
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

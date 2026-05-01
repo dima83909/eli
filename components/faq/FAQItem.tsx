@@ -1,24 +1,46 @@
-// components/faq/FAQItem.tsx
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
   question: string;
   answer: string;
+  open: boolean;
+  onToggle: () => void;
 };
 
-export default function FAQItem({ question, answer }: Props) {
+export default function FAQItem({ question, answer, open, onToggle }: Props) {
   return (
-    <details className="faq-item rounded-lg border border-gray-200 bg-white shadow-sm">
-      <summary className="flex w-full list-none items-center justify-between px-6 py-4 text-left">
-        <span className="text-base font-medium text-gray-900">
+    <div className="border-t border-white/18 last:border-b">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between gap-6 py-7 text-left"
+      >
+        <span className="font-serif text-3xl font-black leading-tight text-white sm:text-4xl">
           {question}
         </span>
-        <span className="faq-icon ml-4 text-xl text-gray-400" aria-hidden="true">
-          +
+        <span className="shrink-0 text-4xl font-light leading-none text-[#ffdcf7]">
+          {open ? "−" : "+"}
         </span>
-      </summary>
-      <div className="faq-panel px-6 pb-5 text-sm leading-relaxed text-gray-600">
-        {answer}
-      </div>
-    </details>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: "easeOut" }}
+            className="overflow-hidden"
+          >
+            <p className="max-w-3xl pb-8 text-base leading-relaxed text-white/68 sm:text-lg">
+              {answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
