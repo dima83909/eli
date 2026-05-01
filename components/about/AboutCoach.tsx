@@ -8,7 +8,7 @@ export default function AboutCoach() {
       id="about"
       className="relative overflow-hidden bg-[#fdffff] py-24 text-[#071441] sm:py-32"
     >
-      <span className="pointer-events-none absolute -right-8 top-8 font-serif text-[34vw] font-black leading-none text-[#ffdcf7]/10 md:-right-16 md:text-[22vw]">
+      <span className="pointer-events-none absolute -right-8 top-8 font-serif text-[34vw] font-black leading-none text-[#F5B8CC]/10 md:-right-16 md:text-[22vw]">
         “
       </span>
 
@@ -21,7 +21,7 @@ export default function AboutCoach() {
             sizes="(min-width: 768px) 48vw, 100vw"
             className="object-cover object-[50%_12%]"
           />
-          <div className="absolute bottom-0 right-0 bg-[#ffdcf7] px-5 py-4 font-serif text-4xl font-black italic text-white sm:px-8 sm:text-6xl">
+          <div className="absolute bottom-0 right-0 bg-[#F5B8CC] px-5 py-4 font-serif text-4xl font-black italic text-white sm:px-8 sm:text-6xl">
             100+
           </div>
         </FadeIn>

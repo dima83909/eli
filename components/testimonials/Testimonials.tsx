@@ -82,7 +82,7 @@ export default function Testimonials() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <span className="pointer-events-none absolute left-4 top-4 font-serif text-[28vw] font-black leading-none text-[#ffdcf7]/12 md:left-10 md:text-[18vw]">
+      <span className="pointer-events-none absolute left-4 top-4 font-serif text-[28vw] font-black leading-none text-[#F5B8CC]/12 md:left-10 md:text-[18vw]">
         “
       </span>
 
@@ -94,13 +94,13 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
+          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#F5B8CC]">
             Відгуки
           </span>
           <h2 className="font-serif text-[clamp(3rem,8vw,7rem)] font-black uppercase leading-[0.86] tracking-normal">
             Досвід жінок,
             <br />
-            <span className="italic text-[#ffdcf7]">які тренуються зі мною</span>
+            <span className="italic text-[#F5B8CC]">які тренуються зі мною</span>
           </h2>
         </motion.div>
 
@@ -133,7 +133,7 @@ export default function Testimonials() {
               aria-label={`Показати відгук ${index + 1}`}
               onClick={() => setActive(index)}
               className={`h-3 rounded-full transition ${
-                active === index ? "w-10 bg-[#ffdcf7]" : "w-3 bg-[#071441]/22 hover:bg-[#071441]/45"
+                active === index ? "w-10 bg-[#F5B8CC]" : "w-3 bg-[#071441]/22 hover:bg-[#071441]/45"
               }`}
             />
           ))}

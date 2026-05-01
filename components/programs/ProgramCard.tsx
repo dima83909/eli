@@ -19,7 +19,7 @@ export default function ProgramCard({
 }: Props) {
   return (
     <article
-      className={`group relative flex min-h-[520px] flex-col overflow-hidden border border-white/18 p-7 transition duration-300 hover:border-[#ffdcf7] hover:bg-[#ffdcf7] sm:p-9 ${
+      className={`group relative flex min-h-[520px] flex-col overflow-hidden border border-white/18 p-7 transition duration-300 hover:border-[#F5B8CC] hover:bg-[#F5B8CC] sm:p-9 ${
         highlighted ? "bg-white/[0.06]" : "bg-transparent"
       }`}
     >
@@ -27,7 +27,7 @@ export default function ProgramCard({
         {index}
       </span>
 
-      <span className="relative z-10 mb-6 text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7] transition group-hover:text-white/70">
+      <span className="relative z-10 mb-6 text-xs font-black uppercase tracking-[0.22em] text-[#F5B8CC] transition group-hover:text-white/70">
         {subtitle}
       </span>
 
@@ -49,7 +49,7 @@ export default function ProgramCard({
 
       <a
         href="#contact"
-        className="relative z-10 mt-auto inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.1em] text-[#ffdcf7] transition group-hover:text-white"
+        className="relative z-10 mt-auto inline-flex items-center gap-3 text-sm font-black uppercase tracking-[0.1em] text-[#F5B8CC] transition group-hover:text-white"
       >
         {cta}
         <span aria-hidden="true">→</span>

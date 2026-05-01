@@ -46,11 +46,11 @@ export default function FAQ() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
+          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#F5B8CC]">
             Питання та відповіді
           </span>
           <h2 className="font-serif text-[clamp(3.2rem,9vw,7.6rem)] font-black uppercase leading-[0.8] tracking-normal">
-            F<span className="italic text-[#ffdcf7]">A</span>Q
+            F<span className="italic text-[#F5B8CC]">A</span>Q
           </h2>
         </motion.div>
 

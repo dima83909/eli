@@ -34,7 +34,7 @@ export default function Header() {
           aria-label="На початок сторінки"
         >
           Eli
-          <span className="text-[#ffdcf7]">.</span>
+          <span className="text-[#F5B8CC]">.</span>
         </a>
 
         <nav aria-label="Головна навігація" className="hidden items-center gap-8 md:flex">
@@ -42,7 +42,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-xs font-black uppercase tracking-[0.1em] text-white/78 transition hover:text-[#ffdcf7]"
+              className="text-xs font-black uppercase tracking-[0.1em] text-white/78 transition hover:text-[#F5B8CC]"
             >
               {item.label}
             </a>
@@ -51,7 +51,7 @@ export default function Header() {
 
         <a
           href="#contact"
-          className="rounded-full bg-[#ffdcf7] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white transition hover:bg-white hover:text-[#071441] sm:px-7"
+          className="rounded-full bg-[#F5B8CC] px-5 py-3 text-xs font-black uppercase tracking-[0.1em] text-white transition hover:bg-white hover:text-[#071441] sm:px-7"
         >
           Записатись
         </a>

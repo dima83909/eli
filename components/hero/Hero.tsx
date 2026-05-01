@@ -29,7 +29,7 @@ export default function Hero() {
             className="object-cover object-[50%_18%] md:hidden"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#071441]/58 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#071441]/18 lg:to-transparent" />
-          <span className="absolute -bottom-12 -left-8 font-serif text-[32vw] font-black uppercase leading-none text-[#ffdcf7]/18 lg:-left-16 lg:text-[20vw]">
+          <span className="absolute -bottom-12 -left-8 font-serif text-[32vw] font-black uppercase leading-none text-[#F5B8CC]/18 lg:-left-16 lg:text-[20vw]">
             F
           </span>
         </div>

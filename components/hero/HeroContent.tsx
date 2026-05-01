@@ -19,9 +19,9 @@ export default function HeroContent() {
           Твоє
           <br />
           <span className="text-[#fdffff]">ті</span>
-          <span className="italic text-[#ffdcf7]">ло</span>
+          <span className="italic text-[#F5B8CC]">ло</span>
           <br />
-          <span className="text-[0.56em] italic normal-case text-[#ffdcf7]">твоя сила.</span>
+          <span className="text-[0.56em] italic normal-case text-[#F5B8CC]">твоя сила.</span>
         </h1>
 
         <p className="mb-10 max-w-xl text-base leading-relaxed text-[#fdffff]/82 sm:text-lg">
@@ -33,7 +33,7 @@ export default function HeroContent() {
         <div className="flex flex-col gap-4 sm:flex-row">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full bg-[#ffdcf7] px-9 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#fdffff] hover:text-[#071441]"
+            className="inline-flex items-center justify-center rounded-full bg-[#F5B8CC] px-9 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#fdffff] hover:text-[#071441]"
           >
             Записатись на консультацію
           </a>

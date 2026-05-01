@@ -12,7 +12,7 @@ export default function Contact() {
       </span>
 
       <FadeIn className="relative z-10 mx-auto max-w-5xl px-5 text-center sm:px-8">
-        <span className="mb-6 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
+        <span className="mb-6 block text-xs font-black uppercase tracking-[0.22em] text-[#F5B8CC]">
           Контакти
         </span>
 
@@ -30,7 +30,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Написати тренеру в Instagram"
-          className="inline-flex rounded-full bg-[#ffdcf7] px-10 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#fdffff] hover:text-[#071441]"
+          className="inline-flex rounded-full bg-[#F5B8CC] px-10 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#fdffff] hover:text-[#071441]"
         >
           Написати в Instagram
         </a>

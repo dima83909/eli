@@ -13,13 +13,13 @@ export default function Programs() {
 
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         <FadeIn className="mb-14 max-w-5xl">
-          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
+          <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#F5B8CC]">
             Програми
           </span>
           <h2 className="font-serif text-[clamp(3rem,8vw,7.4rem)] font-black uppercase leading-[0.86] tracking-normal">
             Формат тренувань
             <br />
-            <span className="italic text-[#ffdcf7]">під ваші цілі</span>
+            <span className="italic text-[#F5B8CC]">під ваші цілі</span>
           </h2>
         </FadeIn>
 

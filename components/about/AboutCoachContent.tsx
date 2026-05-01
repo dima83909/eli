@@ -7,7 +7,7 @@ export default function AboutCoachContent() {
 
   return (
     <div className="relative">
-      <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#ffdcf7]">
+      <span className="mb-5 block text-xs font-black uppercase tracking-[0.22em] text-[#F5B8CC]">
         Про мене
       </span>
 
@@ -15,7 +15,7 @@ export default function AboutCoachContent() {
         Тренування,
         <br />
         які підлашто
-        <span className="italic text-[#ffdcf7]">вуються</span>
+        <span className="italic text-[#F5B8CC]">вуються</span>
         <br />
         під ваше життя
       </h2>
@@ -54,7 +54,7 @@ export default function AboutCoachContent() {
             key={stat.label}
             className="border-[#071441]/30 py-6 sm:border-r sm:px-6 last:sm:border-r-0"
           >
-            <div className="font-serif text-5xl font-black italic leading-none text-[#ffdcf7]">
+            <div className="font-serif text-5xl font-black italic leading-none text-[#F5B8CC]">
               {stat.value}
             </div>
             <div className="mt-2 text-xs font-black uppercase tracking-[0.18em]">{stat.label}</div>
@@ -64,7 +64,7 @@ export default function AboutCoachContent() {
 
       <a
         href="#contact"
-        className="mt-10 inline-flex rounded-full bg-[#071441] px-8 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#ffdcf7]"
+        className="mt-10 inline-flex rounded-full bg-[#071441] px-8 py-4 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-[#F5B8CC]"
       >
         Почати співпрацю
       </a>

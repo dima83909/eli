@@ -21,7 +21,7 @@ export default function FAQItem({ question, answer, open, onToggle }: Props) {
         <span className="font-serif text-3xl font-black leading-tight text-white sm:text-4xl">
           {question}
         </span>
-        <span className="shrink-0 text-4xl font-light leading-none text-[#ffdcf7]">
+        <span className="shrink-0 text-4xl font-light leading-none text-[#F5B8CC]">
           {open ? "−" : "+"}
         </span>
       </button>
